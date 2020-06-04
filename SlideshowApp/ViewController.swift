@@ -159,9 +159,31 @@ class ViewController: UIViewController {
     }
     
 //******************************************************************
-    //画像タップしたときの処理だよ！
+    //画像タップしたときの処理
     @IBAction func imageTap(_ sender: Any) {
+        
+        //▶︎表示の時
+        if value == true {
         performSegue(withIdentifier: "imageTap", sender:nil)
+        }
+        
+        //■表示の時
+        else if value == false {
+            performSegue(withIdentifier: "imageTap", sender:nil)
+            timer.invalidate();
+            print("スライドショー停止")
+            //ボタンの表示を切り替える
+            startStopButtun.setTitle("▶︎", for: .normal)
+            //▶︎になりました。
+            value = true
+            
+            //すすむ/もどるボタンを有効にする
+            goButtun.isEnabled = true
+            returnButtun.isEnabled = true
+            //もどる・すすむボタンを再表示
+            returnButtun.setTitleColor(UIColor.white, for: .normal)
+            goButtun.setTitleColor(UIColor.white, for: .normal)
+        }
     }
     
     //画面遷移のとき渡すデータ
@@ -180,7 +202,7 @@ class ViewController: UIViewController {
         let name = imageName[dispImageNo]
         let image = UIImage(named: name)
         expansionViewController.image = (image)
-        print("\(image)" + "を選択しました")
+        print("\(image!)" + "を選択しました。")
     
     }
     

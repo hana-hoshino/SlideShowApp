@@ -12,6 +12,7 @@ class ExpansionViewController: UIViewController {
     
     //imageViewを入れる
     @IBOutlet weak var expansionView: UIImageView!
+    
     //渡された画像の名前を入れる箱
     var image:UIImage!
 
@@ -23,6 +24,7 @@ class ExpansionViewController: UIViewController {
         // 1画面目のViewControllerから遷移するときにprepareForSegueで
         // imageの値を新たに代入されたので名前が入っている
         expansionView.image = image
+        print(image!)
     }
     
 
