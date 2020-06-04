@@ -180,7 +180,7 @@ class ViewController: UIViewController {
         let name = imageName[dispImageNo]
         let image = UIImage(named: name)
         expansionViewController.image = (image)
-        print("\(image)" + "が選択されました")
+        print("\(image)" + "を選択しました")
     
     }
     

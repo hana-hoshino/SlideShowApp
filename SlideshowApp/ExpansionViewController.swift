@@ -22,7 +22,7 @@ class ExpansionViewController: UIViewController {
         // 上記では、画像名をnilで宣言していたが、
         // 1画面目のViewControllerから遷移するときにprepareForSegueで
         // imageの値を新たに代入されたので名前が入っている
-        expansionView.image = self.image
+        expansionView.image = image
     }
     
 
